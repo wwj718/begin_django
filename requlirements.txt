@@ -1,0 +1,11 @@
+django>=1.6
+django-admin-bootstrapped
+DjangoUeditor
+#django-crispy-forms>=1.4.0
+Grappelli
+#Pillow
+#django-userena
+#easy_thumbnails 
+sorl-thumbnail
+#for get first image from content_html
+BeautifulSoup

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}标题{% endblock %}</title>
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+   <link href="http://cdn.bootcss.com/twitter-bootstrap/2.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!--自己的css放到这里-->
+    <link href="http://cdn.bootcss.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" rel="stylesheet">
+    
+    <script src="http://cdn.bootcss.com/jquery/1.8.2/jquery.min.js"></script>    
+    <!--
+    <script src="http://cdn.bootcss.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>    
+    -->
+    {% block extra_head %}
+            {% comment %}
+                添加些信息, 比如 RSS 源, Javascript, CSS, 以及别的应该放在文档头的信息. 
+            {% endcomment %}
+    {% endblock %}
+
+    {% block app_page_head %}
+    <!--粒度更小-->
+    {% endblock %}
+
+</head>
+
+<body>
+        {% block content %}
+            主体内容
+        {% endblock %}   
+
+       {% block footer %}
+       
+       {% endblock %}             
+    
+    
+    {% block js %}
+    <!--这里插入具体页面引用的js库，或者js代码-->
+    {% endblock %}
+
+    <script>
+
+    $(function(){ //这里插入具体界面的on_ready代码
+    {% block on_ready %}
+    {% endblock %}
+    });
+    </script>
+
+</body> 
+
+</html>

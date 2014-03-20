@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load pagination_tags %}
+{% autopaginate message_list 1 %}
+
+<h1>leave a message</h1>
+{% for message in message_list %}
+	<h2>{{message.name}}</h2>
+	
+	<div id="content">
+	{{message.content}}
+	</div>
+	
+{% paginate %}
+{% endfor %}
+
+
+{% endblock %}

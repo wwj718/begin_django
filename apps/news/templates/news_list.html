@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load pagination_tags %}
+{% autopaginate news_list 1 %}
+
+<h1>新闻列表</h1>
+{% for news in news_list %}
+	<h2>{{news.title}}</h2>
+	<h3>{{news.content_pic|safe}}</h3>
+	<div id="content_html">
+	{{news.content_html|safe}}
+	<!--全文取出，图片用css置顶,其他隐藏,思路才是重要的，其他只是搜索寻找而已
+图片仅仅是html字符串而已
+-->
+	</div>
+{% endfor %}
+
+
+{% endblock %}
